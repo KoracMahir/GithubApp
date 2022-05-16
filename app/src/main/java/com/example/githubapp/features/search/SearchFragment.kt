@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,8 @@ import com.example.githubapp.models.search.SearchResponse
 class SearchFragment : Fragment(), SearchView{
 
     var searchPresenter = SearchPresenter(this)
+    private val loadingBar : ProgressBar? = null
+    private var recyclerView : RecyclerView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +31,7 @@ class SearchFragment : Fragment(), SearchView{
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_search, container, false)
 
+        recyclerView = view.findViewById(R.id.search_recycler_view)
         getSearch(view)
         return view;
     }
@@ -50,10 +54,10 @@ class SearchFragment : Fragment(), SearchView{
 
     override fun getSearchResults(searchResponse: SearchResponse) {
         val adapter = SearchAdapter(searchResponse)
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.search_recycler_view)
-        val llm = LinearLayoutManager(context)
-        llm.orientation = LinearLayoutManager.VERTICAL
-        recyclerView?.layoutManager = llm
+        recyclerView?.visibility = View.VISIBLE
+        val linearLayoutManager = LinearLayoutManager(context)
+        linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
+        recyclerView?.layoutManager = linearLayoutManager
         recyclerView?.adapter = adapter
     }
 
@@ -62,11 +66,14 @@ class SearchFragment : Fragment(), SearchView{
     }
 
     override fun showLoading() {
-
+        loadingBar?.visibility = View.VISIBLE
+        loadingBar?.animation?.start()
+        recyclerView?.visibility = View.GONE
     }
 
     override fun hideLoading() {
-
+        loadingBar?.visibility = View.GONE
+        recyclerView?.visibility = View.VISIBLE
     }
 
 }

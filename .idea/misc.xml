@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_round_star_border_24.xml" value="0.193" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2833333333333333" />
-        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.29739583333333336" />
-        <entry key="app/src/main/res/layout/search_list_item.xml" value="0.29739583333333336" />
+        <entry key="app/src/main/res/layout/fragment_repository_details.xml" value="0.2828125" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2828125" />
+        <entry key="app/src/main/res/layout/search_list_item.xml" value="0.1" />
       </map>
     </option>
   </component>

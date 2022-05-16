@@ -2,4 +2,8 @@
 <resources>
     <dimen name="spacing_20dp">20dp</dimen>
     <dimen name="spacing_10dp">10dp</dimen>
+    <dimen name="spacing_40dp">40dp</dimen>
+    <dimen name="spacing_50dp">50dp</dimen>
+    <dimen name="spacing_5dp">5dp</dimen>
+    <dimen name="spacing_150dp">150dp</dimen>
 </resources>

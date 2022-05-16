@@ -1,7 +1,6 @@
 package com.example.githubapp.features.search
 
-import com.example.githubapp.NetworkingService
-import com.example.githubapp.models.failiure.FailedResponse
+import com.example.githubapp.networking.NetworkingService
 import com.example.githubapp.models.search.SearchResponse
 import retrofit2.Call
 import retrofit2.Callback
